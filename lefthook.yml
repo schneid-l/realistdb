@@ -1,0 +1,27 @@
+pre-commit:
+  parallel: true
+  commands:
+    biome:
+      glob: "*.{js,ts,jsx,tsx,json,jsonc,md,mdx,yml,yaml}"
+      run: bunx --bun biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+    catalog-check:
+      glob: "**/package.json"
+      run: bun run scripts/check-catalog.ts
+
+commit-msg:
+  commands:
+    commitlint:
+      run: bunx --bun commitlint --edit {1}
+
+pre-push:
+  parallel: false
+  commands:
+    typecheck:
+      run: bun run turbo run typecheck --filter=...[origin/main]
+    test-affected:
+      run: bun run turbo run test --filter=...[origin/main]
+    publint-affected:
+      run: bun run turbo run check:publint --filter=...[origin/main]
+    signed-commits:
+      run: bun run scripts/check-signed-commits.ts
