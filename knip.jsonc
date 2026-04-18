@@ -1,0 +1,27 @@
+{
+	"$schema": "https://unpkg.com/knip@5/schema.json",
+	"workspaces": {
+		".": {
+			"entry": ["scripts/*.ts"],
+			"project": ["scripts/**/*.ts"]
+		},
+		"docs": {
+			"entry": ["astro.config.mjs", "src/content.config.ts"]
+		}
+	},
+	"ignore": ["scripts/templates/**"],
+	"ignoreWorkspaces": [
+		"packages/config/biome",
+		"packages/config/tsconfig",
+		"packages/config/stryker",
+		"packages/config/size-limit",
+		"packages/config/vitest",
+		"packages/config/tsdown"
+	],
+	"ignoreDependencies": [
+		"typedoc",
+		"typedoc-plugin-markdown",
+		"starlight-typedoc",
+		"ultracite"
+	]
+}

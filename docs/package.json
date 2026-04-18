@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"astro": "catalog:docs",
+		"@astrojs/check": "catalog:docs",
 		"@astrojs/starlight": "catalog:docs",
 		"starlight-typedoc": "catalog:docs",
 		"typedoc": "catalog:docs",
