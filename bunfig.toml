@@ -1,0 +1,9 @@
+[install]
+exact = true
+frozenLockfile = true
+ignoreScripts = true
+saveTextLockfile = true
+registry = "https://registry.npmjs.org"
+
+[run]
+bun = true
