@@ -1,0 +1,47 @@
+{
+	"name": "@realistdb/{{packageName}}",
+	"version": "0.0.0",
+	"description": "{{description}}",
+	"type": "module",
+	"license": "MIT",
+	"sideEffects": false,
+	"exports": {
+		".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+		"./package.json": "./package.json"
+	},
+	"files": ["dist", "README.md", "LICENSE"],
+	"engines": { "node": ">=20.11" },
+	"publishConfig": {
+		"access": "public",
+		"provenance": true,
+		"registry": "https://registry.npmjs.org"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:mutate": "stryker run",
+		"check:publint": "publint --strict",
+		"check:attw": "attw --pack . --profile esm-only",
+		"check:size": "size-limit"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@realistdb/tsconfig-config": "workspace:*",
+		"@realistdb/tsdown-config": "workspace:*",
+		"@realistdb/vitest-config": "workspace:*",
+		"@realistdb/stryker-config": "workspace:*",
+		"@realistdb/size-limit-config": "workspace:*",
+		"@arethetypeswrong/cli": "catalog:build",
+		"publint": "catalog:build",
+		"size-limit": "catalog:build",
+		"@size-limit/preset-small-lib": "catalog:build",
+		"tsdown": "catalog:build",
+		"typescript": "catalog:",
+		"vitest": "catalog:testing",
+		"@vitest/coverage-v8": "catalog:testing",
+		"fast-check": "catalog:testing",
+		"@stryker-mutator/core": "catalog:testing",
+		"@stryker-mutator/vitest-runner": "catalog:testing"
+	}
+}
