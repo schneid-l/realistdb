@@ -1,0 +1,23 @@
+# Enforce LF line endings on every platform. Keeps Biome / Prettier / Eslint
+# behaviour consistent across macOS, Linux, and Windows regardless of the
+# contributor's git autocrlf setting.
+* text=auto eol=lf
+
+# Binary files: never touch.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
+*.eot  binary
+*.zip  binary
+*.gz   binary
+*.tgz  binary
+
+# Lockfiles: LF, but mark as generated so diffs collapse by default on GitHub.
+bun.lock   text eol=lf linguist-generated
