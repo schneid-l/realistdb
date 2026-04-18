@@ -9,7 +9,8 @@
 			"!reports",
 			"!.astro",
 			"!node_modules",
-			"!bun.lock"
+			"!bun.lock",
+			"!scripts/templates"
 		]
 	},
 	"javascript": {
