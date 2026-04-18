@@ -1,0 +1,36 @@
+{
+	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Edit|Write",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bunx --bun biome check --write --no-errors-on-unmatched $CLAUDE_FILE_PATHS"
+					}
+				]
+			}
+		],
+		"PreToolUse": [
+			{
+				"matcher": "Bash",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bun run scripts/guard-bash.ts"
+					}
+				]
+			}
+		],
+		"Stop": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bun run turbo run typecheck test --filter=...[HEAD]"
+					}
+				]
+			}
+		]
+	}
+}
