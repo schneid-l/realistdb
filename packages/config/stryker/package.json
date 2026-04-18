@@ -1,21 +1,21 @@
 {
-  "name": "@realistdb/stryker-config",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "types": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "index.ts"
-  ],
-  "dependencies": {
-    "@stryker-mutator/core": "catalog:testing",
-    "@stryker-mutator/vitest-runner": "catalog:testing"
-  }
+	"name": "@realistdb/stryker-config",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"license": "MIT",
+	"exports": {
+		".": {
+			"types": "./index.ts",
+			"default": "./index.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"index.ts"
+	],
+	"dependencies": {
+		"@stryker-mutator/core": "catalog:testing",
+		"@stryker-mutator/vitest-runner": "catalog:testing"
+	}
 }

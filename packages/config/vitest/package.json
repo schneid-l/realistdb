@@ -1,21 +1,21 @@
 {
-  "name": "@realistdb/vitest-config",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "types": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "index.ts"
-  ],
-  "dependencies": {
-    "vitest": "catalog:testing",
-    "@vitest/coverage-v8": "catalog:testing"
-  }
+	"name": "@realistdb/vitest-config",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"license": "MIT",
+	"exports": {
+		".": {
+			"types": "./index.ts",
+			"default": "./index.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"index.ts"
+	],
+	"dependencies": {
+		"vitest": "catalog:testing",
+		"@vitest/coverage-v8": "catalog:testing"
+	}
 }
