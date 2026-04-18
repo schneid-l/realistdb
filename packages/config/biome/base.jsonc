@@ -3,12 +3,12 @@
 	"files": {
 		"includes": [
 			"**",
-			"!dist",
-			"!.turbo",
-			"!coverage",
-			"!reports",
-			"!.astro",
-			"!node_modules",
+			"!**/dist",
+			"!**/.turbo",
+			"!**/coverage",
+			"!**/reports",
+			"!**/.astro",
+			"!**/node_modules",
 			"!bun.lock",
 			"!scripts/templates"
 		]

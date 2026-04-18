@@ -1,0 +1,19 @@
+{
+	"name": "@realistdb/docs",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "astro build",
+		"dev": "astro dev",
+		"preview": "astro preview",
+		"typecheck": "astro check"
+	},
+	"dependencies": {
+		"astro": "catalog:docs",
+		"@astrojs/starlight": "catalog:docs",
+		"starlight-typedoc": "catalog:docs",
+		"typedoc": "catalog:docs",
+		"typedoc-plugin-markdown": "catalog:docs"
+	}
+}
