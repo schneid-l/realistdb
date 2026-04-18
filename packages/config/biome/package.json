@@ -1,0 +1,12 @@
+{
+  "name": "@realistdb/biome-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    "./base": "./base.jsonc",
+    "./package.json": "./package.json"
+  },
+  "files": ["base.jsonc"]
+}

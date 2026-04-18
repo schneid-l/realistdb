@@ -12,6 +12,10 @@
         "ultracite": "catalog:",
       },
     },
+    "packages/config/biome": {
+      "name": "@realistdb/biome-config",
+      "version": "0.0.0",
+    },
     "packages/config/size-limit": {
       "name": "@realistdb/size-limit-config",
       "version": "0.0.0",
@@ -323,6 +327,8 @@
     "@oxc-project/types": ["@oxc-project/types@0.126.0", "", {}, "sha512-oGfVtjAgwQVVpfBrbtk4e1XDyWHRFta6BS3GWVzrF8xYBT2VGQAk39yJS/wFSMrZqoiCU4oghT3Ch0HaHGIHcQ=="],
 
     "@quansync/fs": ["@quansync/fs@1.0.0", "", { "dependencies": { "quansync": "^1.0.0" } }, "sha512-4TJ3DFtlf1L5LDMaM6CanJ/0lckGNtJcMjQ1NAV6zDmA0tEHKZtxNKin8EgPaVX1YzljbxckyT2tJrpQKAtngQ=="],
+
+    "@realistdb/biome-config": ["@realistdb/biome-config@workspace:packages/config/biome"],
 
     "@realistdb/size-limit-config": ["@realistdb/size-limit-config@workspace:packages/config/size-limit"],
 
