@@ -71,6 +71,7 @@
   "devDependencies": {
     "@biomejs/biome": "catalog:",
     "@changesets/cli": "catalog:release",
+    "@types/bun": "catalog:types",
     "turbo": "catalog:",
     "ultracite": "catalog:"
   }
