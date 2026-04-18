@@ -1,0 +1,49 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalPassThroughEnv": ["SURREAL_VERSION", "CI"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "tsdown.config.*", "package.json", "tsconfig.json"],
+      "outputs": ["dist/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "tsconfig.json"],
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "test/**", "vitest.config.*"],
+      "outputs": ["coverage/**"]
+    },
+    "test:mutate": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**", "test/**", "stryker.config.*"],
+      "outputs": ["reports/mutation/**"],
+      "cache": false
+    },
+    "test:integration": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**", "test/**"],
+      "outputs": [],
+      "cache": false
+    },
+    "check:publint": {
+      "dependsOn": ["build"],
+      "inputs": ["dist/**", "package.json"],
+      "outputs": []
+    },
+    "check:attw": {
+      "dependsOn": ["build"],
+      "inputs": ["dist/**", "package.json"],
+      "outputs": []
+    },
+    "check:size": {
+      "dependsOn": ["build"],
+      "inputs": ["dist/**", "size-limit.config.*"],
+      "outputs": []
+    }
+  }
+}
