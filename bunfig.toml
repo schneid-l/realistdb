@@ -1,9 +1,10 @@
 [install]
 exact = true
-frozenLockfile = true
 ignoreScripts = true
 saveTextLockfile = true
 registry = "https://registry.npmjs.org"
+# NOTE: frozenLockfile is NOT set here. Local 'bun add' needs to update
+# bun.lock. CI scripts pass --frozen-lockfile explicitly to enforce no drift.
 
 [run]
 bun = true
