@@ -1,0 +1,21 @@
+{
+  "name": "@realistdb/size-limit-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.ts"
+  ],
+  "dependencies": {
+    "size-limit": "catalog:build",
+    "@size-limit/preset-small-lib": "catalog:build"
+  }
+}
