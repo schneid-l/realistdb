@@ -1,0 +1,53 @@
+name: validate-pr
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+concurrency:
+  group: validate-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with: { fetch-depth: 0 }
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with: { bun-version: latest }
+
+      - name: Install
+        run: bun install --frozen-lockfile --ignore-scripts
+
+      - name: Conventional Commits
+        run: bunx --bun commitlint --from="$PR_BASE_SHA" --to=HEAD
+
+      - name: Commit signatures
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          unsigned=$(gh api \
+            "repos/${REPO}/pulls/${PR_NUMBER}/commits" \
+            --jq '.[] | select(.commit.verification.verified == false) | "\(.sha[0:7])  \(.commit.verification.reason)  \(.commit.message | split("\n")[0])"')
+          if [ -n "$unsigned" ]; then
+            echo "::error::Unsigned or invalid commits found:"
+            printf '%s\n' "$unsigned"
+            exit 1
+          fi
+
+      - name: Changeset required
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bun run scripts/check-changeset.ts
+
+      - name: Catalog-only deps
+        run: bun run check:catalog
+
+      - name: Lockfile drift
+        run: bun install --frozen-lockfile --dry-run
