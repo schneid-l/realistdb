@@ -1,0 +1,8 @@
+# Default maintainers.
+* @schneid-l
+
+# Extra review for breaking-change-prone areas.
+/packages/config/ @schneid-l
+/scripts/ @schneid-l
+/.github/ @schneid-l
+/SECURITY.md @schneid-l

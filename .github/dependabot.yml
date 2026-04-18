@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule: { interval: weekly }
+    groups:
+      actions: { patterns: ["*"] }
+
+  - package-ecosystem: npm
+    directory: "/"
+    schedule: { interval: weekly }
+    groups:
+      default-catalog:
+        patterns: ["typescript", "@biomejs/*", "ultracite", "turbo"]
+      testing-catalog:
+        patterns: ["vitest", "@vitest/*", "fast-check", "@stryker-mutator/*", "testcontainers"]
+      build-catalog:
+        patterns: ["tsdown", "publint", "@arethetypeswrong/*", "size-limit", "@size-limit/*", "knip"]
+      release-catalog:
+        patterns: ["@changesets/*", "@commitlint/*", "lefthook"]
+      types-catalog:
+        patterns: ["@types/*"]

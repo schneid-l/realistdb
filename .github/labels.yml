@@ -1,0 +1,9 @@
+- name: ci
+  color: "0052cc"
+  description: Run the full CI matrix on this PR
+- name: needs:changeset
+  color: "d93f0b"
+  description: PR touches packages/* but has no changeset
+- name: security
+  color: "b60205"
+  description: Security-sensitive change — extra scrutiny
