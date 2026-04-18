@@ -1,20 +1,20 @@
 {
-  "name": "@realistdb/tsdown-config",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "types": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "index.ts"
-  ],
-  "dependencies": {
-    "tsdown": "catalog:build"
-  }
+	"name": "@realistdb/tsdown-config",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"license": "MIT",
+	"exports": {
+		".": {
+			"types": "./index.ts",
+			"default": "./index.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"index.ts"
+	],
+	"dependencies": {
+		"tsdown": "catalog:build"
+	}
 }

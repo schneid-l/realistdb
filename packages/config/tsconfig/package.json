@@ -1,16 +1,16 @@
 {
-  "name": "@realistdb/tsconfig-config",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "license": "MIT",
-  "exports": {
-    "./base": "./base.json",
-    "./lib": "./lib.json",
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "base.json",
-    "lib.json"
-  ]
+	"name": "@realistdb/tsconfig-config",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"license": "MIT",
+	"exports": {
+		"./base": "./base.json",
+		"./lib": "./lib.json",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"base.json",
+		"lib.json"
+	]
 }
