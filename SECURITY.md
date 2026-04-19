@@ -17,3 +17,4 @@ Only the latest minor version of each supported major receives security fixes. S
 - Published packages carry sigstore provenance (npm).
 - GitHub Actions are pinned by commit SHA, rotated by Dependabot.
 - Every commit is signed; `validate-pr.yml` enforces this via GitHub's verification API.
+- Accepted-risk transitive advisories are tracked in [SECURITY-ADVISORIES.md](SECURITY-ADVISORIES.md).
