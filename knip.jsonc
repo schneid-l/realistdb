@@ -5,9 +5,7 @@
 			"entry": ["scripts/*.ts"],
 			"project": ["scripts/**/*.ts"]
 		},
-		"docs": {
-			"entry": ["astro.config.mjs", "src/content.config.ts"]
-		}
+		"docs": {}
 	},
 	"ignore": ["scripts/templates/**"],
 	"ignoreWorkspaces": [
