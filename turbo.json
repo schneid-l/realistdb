@@ -1,6 +1,13 @@
 {
 	"$schema": "https://turbo.build/schema.json",
 	"ui": "tui",
+	"globalDependencies": [
+		"tsconfig.base.json",
+		"biome.json",
+		"bunfig.toml",
+		"bun.lock",
+		"package.json"
+	],
 	"globalPassThroughEnv": ["SURREAL_VERSION", "CI"],
 	"tasks": {
 		"build": {
@@ -20,14 +27,10 @@
 		},
 		"test:mutate": {
 			"dependsOn": ["build"],
-			"inputs": ["src/**", "test/**", "stryker.config.*"],
-			"outputs": ["reports/mutation/**"],
 			"cache": false
 		},
 		"test:integration": {
 			"dependsOn": ["build"],
-			"inputs": ["src/**", "test/**"],
-			"outputs": [],
 			"cache": false
 		},
 		"check:publint": {
