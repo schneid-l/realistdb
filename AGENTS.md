@@ -31,7 +31,7 @@ You are working on `realistdb`, a TypeScript SurrealDB client published as a mon
 
 ## Required checks before declaring work done
 
-Run `bun run ci` and ensure it passes with zero warnings. For any `packages/*` change, a `.changeset/*.md` must exist describing the user-facing effect.
+Run `bun run verify` and ensure it passes with zero warnings. Use `bun run fix` to auto-apply Biome fixes before verifying. For any `packages/*` change, a `.changeset/*.md` must exist describing the user-facing effect.
 
 ## How to add a package
 

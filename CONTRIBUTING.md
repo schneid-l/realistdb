@@ -49,8 +49,11 @@ The generator copies from `scripts/templates/package/` and registers a changeset
 ## Running CI locally
 
 ```sh
-bun run ci
+bun run verify        # full local check pipeline (mirrors GitHub Actions `ci`)
+bun run fix           # auto-apply Biome fixes
 ```
+
+`bun run ci` is kept as an alias of `verify` for the GitHub Actions workflow.
 
 ## Testing
 
